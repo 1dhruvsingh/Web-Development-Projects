@@ -1,2 +1,2 @@
-# HTML--Practice
-HTML practice code 
+# Web Development 
+a open progress of my work on my web developement journey 
