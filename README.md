@@ -1,2 +1,2 @@
 # Web Development 
-a open progress of my work on my web developement journey 
+A pratice code repository for web development (html-css-js)
