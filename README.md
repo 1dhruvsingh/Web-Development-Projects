@@ -1,2 +1,2 @@
 # Web Development 
-A pratice code repository for web development (html-css-js)
+A web-development code base (with basic practice codes + some practice projects) 
