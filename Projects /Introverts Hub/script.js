@@ -19,3 +19,13 @@ document.getElementById("chat-form").addEventListener("submit", function (event)
         chatInput.value = "";
     }
 });
+
+// Scroll smoothly to sections
+document.querySelectorAll('.nav-button').forEach(button => {
+    button.addEventListener('click', function () {
+        const targetId = this.getAttribute('onclick').match(/'(.*)'/)[1];
+        document.getElementById(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});

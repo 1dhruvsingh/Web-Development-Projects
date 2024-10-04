@@ -136,18 +136,124 @@ footer a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 600px) {
-    .nav-button {
-        padding: 10px 20px;
-        font-size: 14px;
+/* Styling for the about section */
+#about {
+    background: linear-gradient(135deg, #faf0e6, #e6e6fa);
+    padding: 60px 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container {
+    text-align: center;
+}
+
+.about-banner {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    animation: slideIn 2s ease;
+}
+
+h2 {
+    font-size: 36px;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ffcc00;
+    padding-bottom: 10px;
+    animation: fadeInUp 1s ease;
+}
+
+#about p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    text-align: justify;
+    animation: fadeIn 1.5s ease;
+}
+
+#about strong {
+    color: #007bb8;
+    font-size: 26px;
+}
+
+.icon {
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #ff6347;
+}
+
+.highlight:hover {
+    color: #ff69b4;
+    transition: color 0.3s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about {
+        padding: 40px 10px;
     }
 
+    h2 {
+        font-size: 28px;
+    }
+
+    #about p {
+        font-size: 16px;
+    }
+
+    .about-banner {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
     h2 {
         font-size: 24px;
     }
 
-    button {
-        padding: 8px 12px;
+    #about p {
         font-size: 14px;
+    }
+
+    .highlight {
+        font-size: 16px;
     }
 }
