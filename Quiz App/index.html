@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">Quiz Master</h1>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link" onclick="navigateTo('home')">Home</a></li>
+                <li><a href="#create" class="nav-link" onclick="navigateTo('create')">Create More</a></li>
+                <li><a href="#results" class="nav-link" onclick="navigateTo('results')">Results</a></li>
+                <li><a href="#about" class="nav-link" onclick="navigateTo('about')">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="background-gradient">
+        <div class="container">
+            <div id="home" class="page active">
+                <h1 class="title">Choose a Quiz Category</h1>
+                <div class="category-buttons">
+                    <button class="btn category-btn" onclick="selectCategory('General Knowledge')">General Knowledge</button>
+                    <button class="btn category-btn" onclick="selectCategory('Science')">Science</button>
+                    <button class="btn category-btn" onclick="selectCategory('Math')">Math</button>
+                </div>
+            </div>
+
+            <div id="quiz" class="page hidden">
+                <div class="card">
+                    <h2 id="question" class="question"></h2>
+                    <div id="options" class="options"></div>
+                    <div id="timer" class="timer"></div>
+                </div>
+            </div>
+
+            <div id="results" class="page hidden">
+                <div class="card">
+                    <h1 class="title">Quiz Results</h1>
+                    <p>Your Score: <span id="score"></span></p>
+                    <p>Total Questions: <span id="total"></span></p>
+                    <p>Correct Answers: <span id="correct"></span></p>
+                    <button class="btn play-again-btn" onclick="restartQuiz()">Play Again</button>
+                </div>
+            </div>
+            
+            <!-- About Us Section -->
+            <div id="about" class="page hidden">
+                <div class="card about-card">
+                    <h1 class="title">About Us</h1>
+                    <p>
+                        Welcome to <strong>Quiz Master</strong> – your ultimate destination for fun and interactive quizzes! 
+                        Our goal is to make learning enjoyable and accessible for everyone, whether you're a trivia enthusiast 
+                        or just looking to test your knowledge on various topics.
+                    </p>
+                    <p>
+                        <strong>What We Offer:</strong>
+                        <ul class="about-list">
+                            <li>Engaging quizzes across multiple categories like Science, Math, and General Knowledge.</li>
+                            <li>Smooth animations and a user-friendly interface to keep you entertained.</li>
+                            <li>A competitive multiplayer mode to challenge your friends and see who comes out on top.</li>
+                        </ul>
+                    </p>
+                    <p>
+                        Created with passion by a team of dedicated developers, we aim to provide a seamless and enjoyable 
+                        experience for users of all ages. Our interactive platform is built using modern web technologies 
+                        and is constantly evolving based on your feedback.
+                    </p>
+                    <p>
+                        <strong>Contact Us:</strong>
+                        <br>Email: support@quizmaster.com
+                        <br>Follow us on social media for the latest updates and new quiz releases!
+                    </p>
+                    <button class="btn play-again-btn" onclick="navigateTo('home')">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
