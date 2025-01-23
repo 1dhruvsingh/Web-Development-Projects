@@ -1,0 +1,35 @@
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,aqua , black);
+}
+
+.navbar{
+    font-family: Arial, sans-serif;
+    border: 4px solid black;
+    border-radius: 30px;
+    background-color: aqua;
+    width: 400px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+}
+
+.about{
+    color: white;
+    padding-left: 300px;
+    padding-right: 300px;
+    direction: ltr;
+}
+
+.about2{
+    padding-left: 300px;
+    padding-right: 300px;
+    direction: ltr;
+    color: white;
+}

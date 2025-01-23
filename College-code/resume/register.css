@@ -1,0 +1,21 @@
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,aqua , black);
+}
+.container {
+    width: 300px;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+}
+.register1 {
+    margin-bottom: 15px;
+}
+label {
+    display: inline-block;
+    width: 120px;
+}
+input {
+    width: 150px;
+}
