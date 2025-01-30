@@ -1,0 +1,52 @@
+css,hover
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1vw;
+            font-weight: bold;
+        }
+        h1{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em;
+            font-weight: lighter;
+        }
+        img{
+            border: 5px solid #000;
+            border-radius: 10px;
+        }
+        .gallery{
+            display: flex;
+            gap: 10px;
+        }
+        .gallery img{
+            width: 200px;
+            height: 150px;
+            border-radius: 5px;
+            transition: transform 0.3 ease ease-in-out;
+        }
+        .gallery img:hover{
+            transform: scale(1.1);/* zoom effect on hover */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+
+        }
+    </style>
+</head>
+<body>
+    <h1>This is a HTML </h1>
+    <p>this i s paragraph wtih different font</p>
+    <img src="diagram.jpg" alt="image">
+    <H1>IMAGE GALLERY</H1>
+    <div class="gallery">
+        <img src="image1.jpg" alt="Gallery Image 1">
+        <img src="image2.jpg" alt="gallery image 2">
+        <img src="image3.jpg" alt="galleryimage 3">
+    </div>
+
+</body>
+</html>
