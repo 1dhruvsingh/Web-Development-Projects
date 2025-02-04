@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #f5f5f5;
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .floating-element {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    mix-blend-mode: multiply;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Position elements */
+  .element-1 { top: 20%; left: 20%; }
+  .element-2 { top: 40%; left: 50%; }
+  .element-3 { top: 60%; left: 30%; }
+  .element-4 { top: 30%; left: 70%; }
+  .element-5 { top: 70%; left: 60%; }
+
+  /* Create hover areas */
+  .hover-left, .hover-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+  }
+
+  .hover-left {
+    left: 0;
+  }
+
+  .hover-right {
+    right: 0;
+  }
+
+  /* Move elements based on hover area */
+  .hover-left:hover ~ .floating-element {
+    transform: translateX(-30px);
+  }
+
+  .hover-right:hover ~ .floating-element {
+    transform: translateX(30px);
+  }
+
+  /* Add different transition delays for wave effect */
+  .element-1 { transition-delay: 0s; }
+  .element-2 { transition-delay: 0.05s; }
+  .element-3 { transition-delay: 0.1s; }
+  .element-4 { transition-delay: 0.15s; }
+  .element-5 { transition-delay: 0.2s; }
+
+  /* Example content styling */
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-top: 20vh;
+  }
+
+  .button {
+    padding: 10px 20px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+  }
