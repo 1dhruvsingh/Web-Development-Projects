@@ -1,0 +1,169 @@
+/* style.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #6b46c1, #b794f4);
+  }
+  
+  nav {
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin: 0 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #b794f4;
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #f8f8f8;
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-right: 40px;
+  }
+  
+  .hero img {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .product-description,
+  .features,
+  .pricing,
+  .testimonials,
+  .gallery,
+  .contact {
+    max-width: 1200px;
+    width: 100%;
+    margin: 80px auto;
+    padding: 0 20px;
+  }
+  
+  .pricing table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .pricing th, .pricing td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .pricing th {
+    background-color: #f2f2f2;
+  }
+  
+  .testimonials blockquote {
+    font-size: 24px;
+    font-style: italic;
+    margin: 0;
+  }
+  
+  .testimonials cite {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .gallery-images img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-images img:hover {
+    transform: scale(1.1);
+  }
+  
+  .contact form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  
+  .contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .contact button {
+    grid-column: 1 / -1;
+    background-color: #6b46c1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact button:hover {
+    background-color: #b794f4;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero h1 {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .gallery-images {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .contact form {
+      grid-template-columns: 1fr;
+    }
+  }
+  
