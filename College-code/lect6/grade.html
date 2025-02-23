@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade system</title>
+</head>
+<body>
+    <label for="marks">Enter Marks:</label>
+    <input type="number" id="marks" placeholder="Enter marks">
+    <br><br>
+    <button onclick="gradingsystem()">Get Grade</button>
+    <h3>Grade: <span id="gradeResult"></span></h3>
+
+    <script>
+        function gradingsystem() {
+        let marks = document.getElementById("marks").value;
+        let grade;
+
+        if (marks < 0 || isNaN(marks)) {
+            grade = "Invalid input. Please enter a valid number.";
+        } else {
+            switch (true) {
+                case (marks >= 90 && marks <= 100):
+                    grade = "A";
+                    break;
+                case (marks >= 80 && marks < 90):
+                    grade = "B";
+                    break;
+                case (marks >= 70 && marks < 80):
+                    grade = "C";
+                    break;
+                case (marks >= 33 && marks < 70):
+                    grade = "D";
+                    break;
+                case (marks < 33):
+                    grade = "F";
+                    break;
+                default:
+                    grade = "Invalid marks.";
+            }
+        }
+        document.getElementById("gradeResult").innerText = grade;
+    }
+// for loop
+    let person = {name: "alice", age: 25, city: "New York"};
+    for (let key in person) {
+    console.log(`${key}: ${person[key]}`);
+}
+
+
+    </script>
+</body>
+</html>

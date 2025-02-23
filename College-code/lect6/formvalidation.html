@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FromValidation</title>
+    <style>
+        .error{color: red; font-size: 0.9em;}
+    </style>
+</head>
+<body>
+    <h1>Username Validation</h1>
+    <form id="usernameForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <span id="usernameError" class="error"></span><br><br>
+        <label for="email">Email</label>
+        <input type="email" name="mail" id="mail">
+        <span id="emailError" class="error"></span><br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <span id="passwordError" class="error"></span><br><br>
+        <label for="password2">Confirm Password:</label>
+        <input type="password" name="password2" id="password2">
+        <span id="password2Error" class="error"></span><br><br>
+        
+        <button type="submit">Submit</button>
+
+
+        <script>
+           const form = document.getElementById("usernameForm");
+        const usernameField = document.getElementById("username");
+        const usernameError = document.getElementById("usernameError");
+
+        const emailField = document.getElementById("mail");
+        const emailError = document.getElementById("emailError");
+
+        const passwordField = document.getElementById("password");
+        const passwordError = document.getElementById("passwordError");
+
+        const password2Field = document.getElementById("password2");
+        const password2Error = document.getElementById("password2Error");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Clear previous errors
+            usernameError.textContent = "";
+            emailError.textContent = "";
+            passwordError.textContent = "";
+            password2Error.textContent = "";
+
+            // Username validation
+            if (usernameField.value.trim() === "") {
+                usernameError.textContent = "Username is required";
+            } else if (usernameField.value.length < 3) {
+                usernameError.textContent = "Username must contain at least 3 characters";
+            } else {
+                usernameError.textContent = "";
+            }
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailField.value.trim())) {
+                emailError.textContent = "Please enter a valid email address";
+            }
+
+            // Password validation
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            if (passwordField.value.trim() === "") {
+                passwordError.textContent = "Password is required";
+            } else if (!passwordPattern.test(passwordField.value)) {
+                passwordError.textContent = "Password must be at least 8 characters, contain one uppercase letter, one lowercase letter, and one number";
+            }
+
+            // Confirm password validation
+            if (password2Field.value !== passwordField.value) {
+                password2Error.textContent = "Passwords do not match";
+            }
+
+            // If no errors, form is valid
+            if (usernameError.textContent === "" && emailError.textContent === "" && passwordError.textContent === "" && password2Error.textContent === "") {
+                alert("Form is valid!");
+            }
+        });
+
+
+        </script>
+    </form>
+</body>
+</html>
