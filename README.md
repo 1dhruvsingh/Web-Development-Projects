@@ -1,2 +1,2 @@
 # Web Development 
-Few front end projects + practice code 
+Multiple side projects (some front-end only some full stack ) and some pratice code 
