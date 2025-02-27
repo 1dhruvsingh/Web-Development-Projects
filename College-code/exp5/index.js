@@ -1,0 +1,78 @@
+
+// 1. Area of triangle 
+function triangleArea(a, b, c) {
+    let s = (a + b + c) / 2;
+    let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    return area;
+}
+let side1 = 5, side2 = 6, side3 = 7;
+console.log("Area of the triangle:", triangleArea(side1, side2, side3).toFixed(2));
+
+
+// 2. Add to number ,give triple of the sum if same number 
+function sumOrTriple(a, b) {
+    if (a === b) {
+        return 3 * (a + b);
+    } else {
+        return a + b; 
+    }
+}
+console.log(sumOrTriple(4, 5)); 
+console.log(sumOrTriple(5, 5)); 
+
+
+
+//3. Reversing the number 
+function reverseNumber(num) {
+    return parseInt(num.toString().split('').reverse().join(''));
+}
+console.log(reverseNumber(12345)); 
+
+
+
+//4. 1st letter of each word to uppercase 
+function capitalizeWords(str) {
+    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+console.log(capitalizeWords("hello world")); 
+
+
+//5. finding largest of 5 numbers 
+function findLargest(a, b, c, d, e) {
+    let largest = Math.max(a, b, c, d, e);
+    alert("The largest number is: " + largest);
+}
+findLargest(1,2,3,4,5);
+
+
+//6. Average marks and grade 
+function calculateGrade(marks) {
+    let total = marks.reduce((sum, mark) => sum + mark, 0);
+    let average = total / marks.length;
+
+    let grade;
+    if (average < 60) {
+        grade = "F";
+    } else if (average < 70) {
+        grade = "D";
+    } else if (average < 80) {
+        grade = "C";
+    } else if (average < 90) {
+        grade = "B";
+    } else {
+        grade = "A";
+    }
+    console.log(`Average Marks: ${average.toFixed(2)}`);
+    console.log(`Grade: ${grade}`);
+}
+let studentMarks = [80, 77, 88, 95, 68];
+calculateGrade(studentMarks);
+
+//7. star pattern 
+for (let i =0; i<5; i++){
+    for (let j=0; j<i;j++){
+        console.log("*")
+    }
+}
+
+ 
