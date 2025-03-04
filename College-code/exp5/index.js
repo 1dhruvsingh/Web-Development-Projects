@@ -75,4 +75,66 @@ for (let i =0; i<5; i++){
     }
 }
 
- 
+//8. The To-do app 
+function addTask() {
+    let taskInput = document.getElementById("taskInput");
+    let taskText = taskInput.value.trim();
+    if (taskText === "") return;
+
+    let li = document.createElement("li");
+    li.textContent = taskText;
+    li.addEventListener("click", () => li.classList.toggle("completed"));
+
+    let deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.style.marginLeft = "10px";
+    deleteBtn.onclick = () => li.remove();
+
+    li.appendChild(deleteBtn);
+    document.getElementById("taskList").appendChild(li);
+    taskInput.value = "";
+}
+
+//9. Character counter 
+function updateCounter() {
+    let textInput = document.getElementById("textInput");
+    let charCount = document.getElementById("charCount");
+    charCount.textContent = `${textInput.value.length}/150 characters used`;
+} 
+
+//10. Number guessing game
+let x = Math.floor((Math.random() * 100) + 1);
+let count = 0;
+
+function Guessnumber(){
+    count++; 
+    let msg = document.getElementById("Attempts");
+    msg.textContent = count;
+
+    let Input = document.getElementById("num");
+    let UserInput = Input.value.trim();
+    if (UserInput==="") return;
+    
+    let message = document.getElementById("Response");
+    if (UserInput === x){
+        message.textContent = 'Your guess is correct ${x}';
+        resetGame();
+    }
+    else if (UserInput > x){
+        message.textContent = 'Too High';
+    }
+    else {
+        message.textContent = 'Too Low';
+    }
+    if (count == 10){
+        message.textContent = "Attempts are over"
+        resetGame();
+    }
+
+   function resetGame(){
+        count =0;
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+                document.getElementById("Response").textContent = "";
+                document.getElementById("num").value = "";
+    }
+}

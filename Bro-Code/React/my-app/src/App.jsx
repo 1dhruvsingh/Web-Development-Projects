@@ -1,12 +1,11 @@
 import Card from './Card'
+import Student from './Student'
+import UserGreeting from './UserGreeting';
 
 function App() {
     return(
       <>
-         <Card/>
-         <Card/>
-         <Card/>
-         <Card/>
+       <UserGreeting isLoggedIn={false} username="Dhruv" />
       </>
     );
 }
