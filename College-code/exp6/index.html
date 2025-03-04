@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            var name = document.forms["regForm"]["fullName"].value;
+            var username = document.forms["regForm"]["username"].value;
+            var email = document.forms["regForm"]["email"].value;
+            var password = document.forms["regForm"]["password"].value;
+            var confirmPassword = document.forms["regForm"]["confirmPassword"].value;
+            var dob = document.forms["regForm"]["dob"].value;
+            var phone = document.forms["regForm"]["phone"].value;
+            var gender = document.forms["regForm"]["gender"].value;
+            var country = document.forms["regForm"]["country"].value;
+            var address = document.forms["regForm"]["address"].value;
+            var profilePic = document.forms["regForm"]["profilePic"].value;
+            var securityQuestion = document.forms["regForm"]["securityQuestion"].value;
+            var securityAnswer = document.forms["regForm"]["securityAnswer"].value;
+            var terms = document.forms["regForm"]["terms"].checked;
+
+            var nameRegex = /^[A-Za-z]{3,}$/;
+            var usernameRegex = /^[A-Za-z0-9]{5,}$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var phoneRegex = /^\d{10}$/;
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            var imageRegex = /\.(jpg|png)$/i;
+
+            if (!nameRegex.test(name)) {
+                alert("Full Name must contain only alphabets and be at least 3 characters long.");
+                return false;
+            }
+            if (!usernameRegex.test(username)) {
+                alert("Username must be alphanumeric and at least 5 characters long.");
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                alert("Enter a valid email address.");
+                return false;
+            }
+            if (!passwordRegex.test(password)) {
+                alert("Password must be at least 8 characters long, including uppercase, lowercase, number, and special character.");
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            if (!phoneRegex.test(phone)) {
+                alert("Phone number must be a valid 10-digit number.");
+                return false;
+            }
+            if (gender === "") {
+                alert("Please select a gender.");
+                return false;
+            }
+            if (country === "") {
+                alert("Please select a country.");
+                return false;
+            }
+            if (address.length < 10) {
+                alert("Address must be at least 10 characters long.");
+                return false;
+            }
+            if (!imageRegex.test(profilePic)) {
+                alert("Profile picture must be a JPG or PNG file.");
+                return false;
+            }
+            if (securityQuestion === "") {
+                alert("Please select a security question.");
+                return false;
+            }
+            if (securityAnswer.length < 3) {
+                alert("Security answer must be at least 3 characters long.");
+                return false;
+            }
+            if (!terms) {
+                alert("You must accept the terms and conditions.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="regForm" onsubmit="return validateForm()">
+        Full Name: <input type="text" name="fullName"><br>
+        Username: <input type="text" name="username"><br>
+        Email: <input type="email" name="email"><br>
+        Password: <input type="password" name="password"><br>
+        Confirm Password: <input type="password" name="confirmPassword"><br>
+        Date of Birth: <input type="date" name="dob"><br>
+        Phone Number: <input type="text" name="phone"><br>
+        Gender: <select name="gender">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+        Country: <select name="country">
+            <option value="">Select</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+        </select><br>
+        Address: <textarea name="address"></textarea><br>
+        Profile Picture: <input type="file" name="profilePic"><br>
+        Security Question: <select name="securityQuestion">
+            <option value="">Select</option>
+            <option value="Pet Name">What is your pet's name?</option>
+            <option value="Mother's Maiden Name">What is your mother's maiden name?</option>
+        </select><br>
+        Security Answer: <input type="text" name="securityAnswer"><br>
+        <input type="checkbox" name="terms"> I accept the terms and conditions<br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
