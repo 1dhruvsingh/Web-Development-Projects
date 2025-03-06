@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+    
+    <!-- 1. -->
+    <!-- <body ng-controller="MainCtrl"> -->
+    <!-- <h1>{{greeting}}</h1>
+    <input type="text" ng-model="name">
+    <input type="date" ng-model="date" style="width: 10em">
+    <p>Hello,{{name|uppercase}}</p>
+    <p>{{date |date:'fullDate'}}</p>
+    <button ng-click="greet()">Greet</button>
+    <p>{{greeting}}</p> -->
+
+    <!-- 2. -->
+    <body ng-controller="UserCtrl">
+    <h1>Users</h1>
+     <ul>
+        <li ng-repeat="user in users">{{user.name}}</li>
+     </ul>
+
+</body>
+<script>
+
+    // 1. 
+
+    // let app = angular.module('myApp',[]);
+    // app.controller("MainCtrl",function($scope){
+    //     // $scope.greeting = "Hello, AngularJS";
+    //     $scope.greet = function(){
+    //         $scope.greeting ="Hello World";
+    //     };
+    // });
+
+    //2. 
+    angular.module('userApp',[]).controller('UserCtrl',function($scope){
+        $scope.users=[
+            {name:'Alice'},
+            {name:'Bob'},
+            {name: 'Charlie'}
+        ];
+    });
+</script>
+</html>
