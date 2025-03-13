@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <style>
+        .error { color: red; font-size: 0.9em; }
+        .success { color: green; font-size: 0.9em; }
+        form { max-width: 300px; margin: 0 auto; }
+        input, button { width: 100%; margin: 8px 0; padding: 8px; }
+    </style>
+</head>
+<body ng-controller="FormController">
+
+    <h2>AngularJS Form</h2>
+
+    <form name="userForm" ng-submit="submitForm()">
+        <label>Name:</label>
+        <input type="text" name="name" ng-model="user.name" required>
+        <span class="error" ng-show="userForm.name.$touched && userForm.name.$error.required">
+            Name is required!
+        </span>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" ng-model="user.email" required>
+        <span class="error" ng-show="userForm.email.$touched && userForm.email.$error.required">
+            Email is required!
+        </span>
+        <span class="error" ng-show="userForm.email.$touched && userForm.email.$error.email">
+            Invalid email format!
+        </span>
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" ng-model="user.password" required minlength="6">
+        <span class="error" ng-show="userForm.password.$touched && userForm.password.$error.required">
+            Password is required!
+        </span>
+        <span class="error" ng-show="userForm.password.$touched && userForm.password.$error.minlength">
+            Password must be at least 6 characters!
+        </span>
+        <br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" ng-model="user.gender" value="Male" required> Male
+        <input type="radio" name="gender" ng-model="user.gender" value="Female" required> Female
+        <span class="error" ng-show="userForm.gender.$touched && userForm.gender.$error.required">
+            Please select your gender!
+        </span>
+        <br><br>
+
+        <button type="submit" ng-disabled="userForm.$invalid">Submit</button>
+    </form>
+
+    <span class="success" ng-show="submitted">Form submitted successfully!</span>
+
+    <script src="form.js"></script>
+</body>
+</html>

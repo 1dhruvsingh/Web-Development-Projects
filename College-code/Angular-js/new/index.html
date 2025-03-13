@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Js $rootScope </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="CtrlA">
+        <h1> Controller A:{{globalMessage}}</h1>
+        <input type="text" ng-model="globalMessage" placeholder="Upadte Global Message">
+    </div>
+    <div ng-controller="CtrlB">
+        <h1> Controller B:{{globalMessage}}</h1>
+        <input type="text" ng-model="globalMessage" placeholder="Upadte Global Message">
+    </div>
+</body>
+</html>
