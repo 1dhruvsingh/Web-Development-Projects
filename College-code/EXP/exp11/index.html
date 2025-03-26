@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS User Authentication</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        input { display: block; width: 100%; padding: 8px; margin: 10px 0; }
+        button { width: 100%; padding: 10px; background: blue; color: white; border: none; cursor: pointer; }
+        span { color: red; font-size: 12px; }
+        nav { text-align: center; margin-bottom: 20px; }
+        nav a { margin: 10px; text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="#/login">Login</a> |
+            <a href="#/register">Register</a>
+        </nav>
+        <div ng-view></div>
+    </div>
+
+    <script src="index.js"> </script>
+
+    <script type="text/ng-template" id="loginTemplate">
+        <div>
+            <h2>Login</h2>
+            <form name="loginForm" ng-submit="submitLogin()" novalidate>
+                <label>Email:</label>
+                <input type="email" ng-model="user.email" required>
+                <span ng-show="loginForm.email.$dirty && loginForm.email.$invalid">Invalid Email</span>
+                <br>
+                <label>Password:</label>
+                <input type="password" ng-model="user.password" required minlength="6">
+                <span ng-show="loginForm.password.$dirty && loginForm.password.$invalid">Invalid Password</span>
+                <br>
+                <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
+            </form>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="registerTemplate">
+        <div>
+            <h2>Register</h2>
+            <form name="registerForm" ng-submit="submitRegister()" novalidate>
+                <label>Full Name:</label>
+                <input type="text" ng-model="user.fullName" required minlength="3">
+                <span ng-show="registerForm.fullName.$dirty && registerForm.fullName.$invalid">Invalid Name</span>
+                <br>
+                <label>Email:</label>
+                <input type="email" ng-model="user.email" required>
+                <span ng-show="registerForm.email.$dirty && registerForm.email.$invalid">Invalid Email</span>
+                <br>
+                <label>Password:</label>
+                <input type="password" ng-model="user.password" required minlength="8">
+                <span ng-show="registerForm.password.$dirty && registerForm.password.$invalid">Invalid Password</span>
+                <br>
+                <label>Confirm Password:</label>
+                <input type="password" ng-model="user.confirmPassword" required>
+                <span ng-show="user.confirmPassword !== user.password">Passwords do not match</span>
+                <br>
+                <button type="submit" ng-disabled="registerForm.$invalid">Register</button>
+            </form>
+        </div>
+    </script>
+</body>
+</html>
