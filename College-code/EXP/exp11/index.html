@@ -7,19 +7,50 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
-        input { display: block; width: 100%; padding: 8px; margin: 10px 0; }
-        button { width: 100%; padding: 10px; background: blue; color: white; border: none; cursor: pointer; }
-        span { color: red; font-size: 12px; }
-        nav { text-align: center; margin-bottom: 20px; }
-        nav a { margin: 10px; text-decoration: none; color: blue; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+        }
+        .container { 
+            max-width: 400px; 
+            margin: auto; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+        }
+        input { 
+            display: block; 
+            width: 100%; 
+            padding: 8px; 
+            margin: 10px 0; 
+        }
+        button { 
+            width: 100%; 
+            padding: 10px; 
+            background: blue; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        }
+        span { 
+            color: red; 
+            font-size: 12px; 
+        }
+        nav { 
+            text-align: center; 
+            margin-bottom: 20px; 
+        }
+        nav a { 
+            margin: 10px; 
+            text-decoration: none; 
+            color: blue; 
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
-            <a href="#/login">Login</a> |
+            <a href="#/login">Login</a>
             <a href="#/register">Register</a>
         </nav>
         <div ng-view></div>
