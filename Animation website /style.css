@@ -1,0 +1,242 @@
+@font-face {  
+    font-family: neo;
+    src: url(./fonts/NeueHaasDisplayMediu.ttf);
+}
+
+*{
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+   font-family:'neo';
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+.page1{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    position: relative;
+    padding: 0 2vw;
+}
+
+nav{
+    padding: 2vw 2vw;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    color: black;
+}
+
+.nav-part2 h4{
+    padding: 10px 20px;
+    border: 1px solid rgb(83, 82, 82);
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    transition: all ease 0.4s;
+    overflow: hidden;
+}
+
+a{
+   text-decoration: none;
+   color: black;
+   position: relative;
+   z-index: 9;
+}
+
+.nav-part2 h4::after{
+    content:"";
+    height:100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    border-radius: 80%;
+    color: white;
+    transition: all ease 0.4s;
+}
+
+.nav-part2 h4:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+
+.nav-part2 h4 a:hover{
+   color: white;
+}
+
+.title{
+    font-size: 65px;
+    font-weight: bold;
+    
+}
+
+img{
+    height: 70px;
+}
+
+.center{
+    width: 100%;
+    height:65vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #0000003c;
+    padding-bottom: 2.5vw;
+}
+
+.left h3{
+    width: 25vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
+}
+
+.center h1{
+    font-size: 11vw;
+    text-align: right;
+    line-height: 9vw;
+}
+
+.new-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+   display: flex;
+   justify-content: center; 
+   align-items: center;
+   z-index: 9;
+   position: relative;
+}
+
+.right{
+    padding-bottom: 50px;
+}
+
+.hero-shape{
+    position: absolute;
+    width: 46vw;
+    height: 35vw;
+    right: 0;
+    top: 65vh;
+    filter: blur(25px);
+}
+
+.hero-1{
+    background-color: #FE320A;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    height: 100%;
+    width: 100%;
+    filter:blur(25px);
+    position: absolute;
+}
+
+.hero-2{
+    background: linear-gradient(#FE320A,#fe8c0afc);
+    border-radius: 50%;
+    height: 30vw;
+    width: 30vw;
+    filter:blur(25px);
+    position: absolute;
+    animation-name: animate2;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.hero-3{
+    background: linear-gradient(#FE320A,#fe6c0a);
+    border-radius: 50%;
+    height: 30vw;
+    filter:blur(25px);
+    position: absolute;    
+    animation-name: animate1;
+    animation-duration: 2s;
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite;  
+    animation-direction: alternate;   
+}
+
+@keyframes animate1 {
+   0%{
+    transform: translate(0%, -20%)scale(1.1);
+  }
+   100% {
+    transform: translate(-60%, 100%) scale(1.5);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translate(10%, -5%) scale(1.1); 
+  }
+  100% {
+    transform: translate(80%, 40%) scale(1); 
+  }
+}
+
+.page2{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 8vw 0;
+    position: relative;
+}
+
+.moving-text{
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.con{
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.moving-text h1{
+    font-size: 8vw;
+    display: inline-block;
+
+}
+
+.gola{
+    height: 60px;
+    width:60px;
+    border-radius:  50%;
+    background-color: #FE320A;
+    display: inline-block;
+    margin: 1vw 2vw;
+}
+
+@keyframes move{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+
+.page2-bottom{ 
+    height: 80vh;
+    width:100%;
+}
